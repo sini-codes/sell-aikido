@@ -120,3 +120,143 @@ document.querySelectorAll('.course-card .btn').forEach(button => {
         alert(`Спасибо за интерес к курсу "${courseTitle}"! Мы свяжемся с вами в ближайшее время.`);
     });
 });
+
+// Music Player
+const tracks = [
+    {
+        name: "Digital Meditation",
+        artist: "Cyber Monk",
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+    },
+    {
+        name: "Neon Dreams",
+        artist: "Synthwave Master",
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+    },
+    {
+        name: "Electric Zen",
+        artist: "AI Composer",
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+    }
+];
+
+let currentTrackIndex = 0;
+let isPlaying = false;
+
+const audioPlayer = document.getElementById('audioPlayer');
+const playBtn = document.getElementById('playBtn');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const trackName = document.getElementById('trackName');
+const trackArtist = document.getElementById('trackArtist');
+const progressBar = document.getElementById('progressBar');
+const progressFill = document.getElementById('progressFill');
+const currentTimeElem = document.getElementById('currentTime');
+const durationElem = document.getElementById('duration');
+const volumeSlider = document.getElementById('volumeSlider');
+const visualizerBars = document.querySelectorAll('.visualizer .bar');
+
+// Initialize player
+function initPlayer() {
+    loadTrack(currentTrackIndex);
+    audioPlayer.volume = 0.7;
+}
+
+// Load track
+function loadTrack(index) {
+    const track = tracks[index];
+    audioPlayer.src = track.url;
+    trackName.textContent = track.name;
+    trackArtist.textContent = track.artist;
+    updateProgress();
+}
+
+// Play/Pause functionality
+playBtn.addEventListener('click', () => {
+    if (isPlaying) {
+        pauseTrack();
+    } else {
+        playTrack();
+    }
+});
+
+function playTrack() {
+    audioPlayer.play();
+    isPlaying = true;
+    playBtn.querySelector('.play-icon').style.display = 'none';
+    playBtn.querySelector('.pause-icon').style.display = 'block';
+    animateVisualizer();
+}
+
+function pauseTrack() {
+    audioPlayer.pause();
+    isPlaying = false;
+    playBtn.querySelector('.play-icon').style.display = 'block';
+    playBtn.querySelector('.pause-icon').style.display = 'none';
+}
+
+// Previous/Next track
+prevBtn.addEventListener('click', () => {
+    currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+    loadTrack(currentTrackIndex);
+    if (isPlaying) playTrack();
+});
+
+nextBtn.addEventListener('click', () => {
+    currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+    loadTrack(currentTrackIndex);
+    if (isPlaying) playTrack();
+});
+
+// Update progress
+audioPlayer.addEventListener('timeupdate', updateProgress);
+
+function updateProgress() {
+    const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+    progressFill.style.width = progress + '%';
+    
+    currentTimeElem.textContent = formatTime(audioPlayer.currentTime);
+    durationElem.textContent = formatTime(audioPlayer.duration);
+}
+
+// Format time
+function formatTime(time) {
+    if (isNaN(time)) return '0:00';
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+}
+
+// Progress bar click
+progressBar.addEventListener('click', (e) => {
+    const clickX = e.offsetX;
+    const width = progressBar.offsetWidth;
+    const progress = clickX / width;
+    audioPlayer.currentTime = progress * audioPlayer.duration;
+});
+
+// Volume control
+volumeSlider.addEventListener('input', (e) => {
+    audioPlayer.volume = e.target.value / 100;
+});
+
+// Visualizer animation
+function animateVisualizer() {
+    if (!isPlaying) return;
+    
+    visualizerBars.forEach((bar, index) => {
+        const height = Math.random() * 80 + 20;
+        bar.style.height = height + '%';
+        bar.style.animationDelay = `${index * 0.1}s`;
+    });
+    
+    requestAnimationFrame(animateVisualizer);
+}
+
+// Track ended
+audioPlayer.addEventListener('ended', () => {
+    nextBtn.click();
+});
+
+// Initialize player on load
+initPlayer();
