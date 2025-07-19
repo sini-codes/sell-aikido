@@ -124,18 +124,18 @@ document.querySelectorAll('.course-card .btn').forEach(button => {
 // Music Player
 const tracks = [
     {
-        name: "Digital Meditation",
-        artist: "Cyber Monk",
+        name: "Седая Ночь (Remix)",
+        artist: "Ласковый Май",
         url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
     },
     {
-        name: "Neon Dreams",
-        artist: "Synthwave Master",
+        name: "Крошка Моя",
+        artist: "Руки Вверх",
         url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
     },
     {
-        name: "Electric Zen",
-        artist: "AI Composer",
+        name: "Владимирский Централ",
+        artist: "Михаил Круг",
         url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
     }
 ];
