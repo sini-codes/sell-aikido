@@ -124,19 +124,19 @@ document.querySelectorAll('.course-card .btn').forEach(button => {
 // Music Player
 const tracks = [
     {
-        name: "Also Sprach Zarathustra",
-        artist: "Richard Strauss (Public Domain)",
-        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
+        name: "Bolero",
+        artist: "Maurice Ravel",
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"
     },
     {
-        name: "The Blue Danube",
-        artist: "Johann Strauss II (Public Domain)",
-        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
+        name: "Ride of the Valkyries",
+        artist: "Richard Wagner",
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
     },
     {
-        name: "Moonlight Sonata",
-        artist: "Ludwig van Beethoven (Public Domain)",
-        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
+        name: "Symphony No. 5",
+        artist: "Ludwig van Beethoven",
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"
     }
 ];
 
