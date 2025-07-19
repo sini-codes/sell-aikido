@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#1e1e2e" stroke="#ff6b6b" stroke-width="2"/>
+  
+  <!-- Lightning bolt -->
+  <path d="M 38 12 L 26 32 L 32 32 L 26 52 L 44 28 L 36 28 L 38 12" 
+        fill="#ffd700" 
+        stroke="#ff6b6b" 
+        stroke-width="1"
+        stroke-linejoin="round"/>
+  
+  <!-- Yin-yang style curves representing aikido flow -->
+  <path d="M 32 8 C 20 8 8 20 8 32 C 8 24 16 16 24 16 C 32 16 40 24 40 32 C 40 20 36 8 32 8" 
+        fill="none" 
+        stroke="#4ecdc4" 
+        stroke-width="2" 
+        opacity="0.7"/>
+  
+  <path d="M 32 56 C 44 56 56 44 56 32 C 56 40 48 48 40 48 C 32 48 24 40 24 32 C 24 44 28 56 32 56" 
+        fill="none" 
+        stroke="#4ecdc4" 
+        stroke-width="2" 
+        opacity="0.7"/>
+</svg>
