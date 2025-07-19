@@ -124,19 +124,19 @@ document.querySelectorAll('.course-card .btn').forEach(button => {
 // Music Player
 const tracks = [
     {
-        name: "Седая Ночь (Remix)",
-        artist: "Ласковый Май",
-        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+        name: "Also Sprach Zarathustra",
+        artist: "Richard Strauss (Public Domain)",
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
     },
     {
-        name: "Крошка Моя",
-        artist: "Руки Вверх",
-        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+        name: "The Blue Danube",
+        artist: "Johann Strauss II (Public Domain)",
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
     },
     {
-        name: "Владимирский Централ",
-        artist: "Михаил Круг",
-        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+        name: "Moonlight Sonata",
+        artist: "Ludwig van Beethoven (Public Domain)",
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
     }
 ];
 
