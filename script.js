@@ -1,146 +1,122 @@
-// Course data
-const courses = {
-    basic: {
-        name: "Этическое Айкидо: Основы",
-        price: "14 950 ₽",
-        level: "Уровень 1"
-    },
-    master: {
-        name: "Квантовое Айкидо: Мастер",
-        price: "24 950 ₽",
-        level: "Уровень 2"
-    },
-    legend: {
-        name: "Космическое Айкидо: Гранд-Мастер",
-        price: "49 950 ₽",
-        level: "Уровень 3"
-    }
-};
+// Mobile menu functionality
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
 
-// Modal functionality
-const modal = document.getElementById('purchase-modal');
-const buyButtons = document.querySelectorAll('[data-course]');
-const selectedCourseDiv = document.getElementById('selected-course');
-const purchaseForm = document.getElementById('purchase-form');
-
-let selectedCourse = '';
-
-// Close modal function
-function closeModal() {
-    modal.classList.add('hidden');
-}
-
-// Open modal when buy button is clicked
-buyButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        selectedCourse = this.getAttribute('data-course');
-        const course = courses[selectedCourse];
-        
-        selectedCourseDiv.innerHTML = `
-            <div style="background: rgba(78, 205, 196, 0.2); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
-                <strong>${course.name}</strong><br>
-                ${course.level}<br>
-                <span style="font-size: 24px; color: #ffd93d;">${course.price}</span>
-            </div>
-        `;
-        
-        modal.classList.remove('hidden');
-    });
+mobileMenuBtn.addEventListener('click', function() {
+    mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
 });
 
-
-// Discord webhook URL
-const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1396172141585498122/Njovap_ShNvGI8kRqHc-8gEuL3TU-5BZy2e9Fm_kLi2fyvHQ5YKraVLoNDVILXGvFBM2';
-
-// Handle form submission
-purchaseForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const formData = new FormData(purchaseForm);
-    const data = {
-        course: courses[selectedCourse].name,
-        name: formData.get('name'),
-        email: formData.get('email')
-    };
-    
-    // Disable submit button
-    const submitBtn = purchaseForm.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Отправка...';
-    
-    try {
-        // Send to Discord webhook
-        const webhookData = {
-            embeds: [{
-                title: '🎯 Новая заявка на курс!',
-                color: 0x4ecdc4,
-                fields: [
-                    {
-                        name: '📚 Курс',
-                        value: data.course,
-                        inline: true
-                    },
-                    {
-                        name: '👤 Имя',
-                        value: data.name,
-                        inline: true
-                    },
-                    {
-                        name: '📧 Email',
-                        value: data.email,
-                        inline: true
-                    }
-                ],
-                timestamp: new Date().toISOString(),
-                footer: {
-                    text: 'Этическое Айкидо'
-                }
-            }]
-        };
-        
-        const response = await fetch(DISCORD_WEBHOOK_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(webhookData)
-        });
-        
-        if (response.ok) {
-            // Show success message
-            alert(`Спасибо за заявку на курс "${data.course}"!\n\nМы свяжемся с вами по email ${data.email} в ближайшее время.`);
-            
-            // Close modal and reset form
-            modal.classList.add('hidden');
-            purchaseForm.reset();
-        } else {
-            throw new Error('Ошибка отправки');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже или свяжитесь с нами напрямую.');
-    } finally {
-        // Re-enable submit button
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Отправить заявку';
-    }
+// Close mobile menu when clicking on a link
+mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.style.display = 'none';
+    });
 });
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        if (this.getAttribute('href') === '#') return;
+        
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            e.preventDefault();
+            const navHeight = document.querySelector('.nav').offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
         }
     });
 });
 
+// Add animation on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
 
+const observer = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
 
+// Observe all feature cards, course cards, and testimonial cards
+const animatedElements = document.querySelectorAll('.feature-card, .course-card, .testimonial-card');
+animatedElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    observer.observe(el);
+});
 
+// Form submission handling
+const ctaForm = document.querySelector('.cta-form');
+if (ctaForm) {
+    ctaForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const emailInput = this.querySelector('.cta-input');
+        const email = emailInput.value;
+        
+        if (email) {
+            alert(`Спасибо! Мы отправили бесплатный урок на ${email}`);
+            emailInput.value = '';
+        }
+    });
+}
 
+// Add active state to navigation based on scroll position
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"], .mobile-menu a[href^="#"]');
+    const scrollPosition = window.scrollY + 100;
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+});
+
+// Add scroll effect to navigation
+let lastScroll = 0;
+const nav = document.querySelector('.nav');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll <= 0) {
+        nav.style.boxShadow = 'var(--shadow-sm)';
+    } else {
+        nav.style.boxShadow = 'var(--shadow-md)';
+    }
+    
+    lastScroll = currentScroll;
+});
+
+// Course button click tracking
+document.querySelectorAll('.course-card .btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const courseTitle = this.closest('.course-card').querySelector('.course-title').textContent;
+        alert(`Спасибо за интерес к курсу "${courseTitle}"! Мы свяжемся с вами в ближайшее время.`);
+    });
+});
