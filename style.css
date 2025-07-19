@@ -382,33 +382,57 @@ a:hover {
 }
 
 .caesar-quote {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    background: rgba(157, 0, 255, 0.05);
-    border-left: 4px solid var(--neon-purple);
-    border-right: 4px solid var(--neon-purple);
+    margin: 3rem 0;
+    padding: 2.5rem;
+    background: rgba(157, 0, 255, 0.1);
+    border-left: 8px solid var(--neon-purple);
+    border-right: 8px solid var(--neon-purple);
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 0 40px rgba(157, 0, 255, 0.3);
+}
+
+.caesar-avatar {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.caesar-avatar img {
+    width: 120px;
+    height: 120px;
+    border: 3px solid var(--neon-cyan);
+    box-shadow: 0 0 30px var(--neon-cyan);
+}
+
+.kimono-overlay {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    font-size: 3rem;
+    filter: drop-shadow(0 0 10px var(--neon-purple));
 }
 
 .caesar-quote::before,
 .caesar-quote::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--neon-cyan);
+    width: 30px;
+    height: 30px;
+    border: 3px solid var(--neon-cyan);
 }
 
 .caesar-quote::before {
-    top: -10px;
-    left: -10px;
+    top: -15px;
+    left: -15px;
     border-right: none;
     border-bottom: none;
 }
 
 .caesar-quote::after {
-    bottom: -10px;
-    right: -10px;
+    bottom: -15px;
+    right: -15px;
     border-left: none;
     border-top: none;
 }
@@ -416,37 +440,80 @@ a:hover {
 .caesar-quote blockquote {
     margin: 0;
     text-align: center;
+    flex: 1;
 }
 
 .quote-text {
     display: block;
-    font-size: 1.75rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 900;
     color: var(--neon-cyan);
     text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 0 20px var(--neon-cyan);
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 30px var(--neon-cyan), 0 0 60px var(--neon-cyan);
     font-style: italic;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
 }
 
 .quote-translation {
     display: block;
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     color: var(--text-secondary);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .caesar-quote cite {
     display: block;
     text-align: right;
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: var(--neon-purple);
     font-style: normal;
     text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+    text-shadow: 0 0 10px var(--neon-purple);
+}
+
+/* YouTube Section */
+.youtube-section {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.youtube-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid var(--neon-purple);
+    box-shadow: 0 0 40px rgba(157, 0, 255, 0.5);
+}
+
+.youtube-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.youtube-caption {
+    margin-top: 1rem;
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
     letter-spacing: 1px;
-    margin-top: 0.5rem;
 }
 
 .hero-actions {

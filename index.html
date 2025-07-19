@@ -70,11 +70,29 @@
                     Овладейте искусством этического айкидо и научитесь трансформировать любые разногласия в конструктивный диалог
                 </p>
                 <div class="caesar-quote">
+                    <div class="caesar-avatar">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Caesar&accessories=none&clothing=hoodie&clothingColor=white&eyebrows=defaultNatural&eyes=default&facialHair=none&hair=caesar&hairColor=silverGray&mouth=serious&nose=default&skin=light&style=circle&clothingGraphic=bat" alt="Caesar in Kimono">
+                        <div class="kimono-overlay">🥋</div>
+                    </div>
                     <blockquote>
-                        <span class="quote-text">"Veni, vidi, vici"</span>
+                        <span class="quote-text">"VENI, VIDI, VICI"</span>
                         <span class="quote-translation">Пришёл, увидел конфликт, трансформировал</span>
                     </blockquote>
                     <cite>— Гай Юлий Цезарь (адаптировано для айкидо)</cite>
+                </div>
+                
+                <!-- YouTube Bolero Section -->
+                <div class="youtube-section">
+                    <div class="youtube-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/r30D3SW4OVw?autoplay=0&controls=1&rel=0" 
+                            title="Maurice Ravel - Bolero" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="youtube-caption">🎼 Maurice Ravel - Bolero | Медитация под повторяющийся марш</p>
                 </div>
                 <div class="hero-actions">
                     <a href="#courses" class="btn btn-primary btn-large">Выбрать курс</a>
@@ -99,74 +117,6 @@
                         <div class="stat-label">Лет опыта</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Music Player Section -->
-    <section class="music-player-section">
-        <div class="container">
-            <div class="music-player">
-                <div class="player-header">
-                    <h3 class="player-title">КЛАССИЧЕСКАЯ СИМФОНИЯ</h3>
-                    <p class="player-subtitle">Величественное сопровождение для этического айкидо</p>
-                </div>
-                <div class="player-controls">
-                    <button class="player-btn" id="prevBtn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="19 20 9 12 19 4 19 20"></polygon>
-                            <line x1="5" y1="19" x2="5" y2="5"></line>
-                        </svg>
-                    </button>
-                    <button class="player-btn play-btn" id="playBtn">
-                        <svg class="play-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                        </svg>
-                        <svg class="pause-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
-                            <rect x="6" y="4" width="4" height="16"></rect>
-                            <rect x="14" y="4" width="4" height="16"></rect>
-                        </svg>
-                    </button>
-                    <button class="player-btn" id="nextBtn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="5 4 15 12 5 20 5 4"></polygon>
-                            <line x1="19" y1="5" x2="19" y2="19"></line>
-                        </svg>
-                    </button>
-                </div>
-                <div class="track-info">
-                    <div class="track-name" id="trackName">Загрузка...</div>
-                    <div class="track-artist" id="trackArtist">...</div>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-bar" id="progressBar">
-                        <div class="progress-fill" id="progressFill"></div>
-                    </div>
-                    <div class="time-info">
-                        <span id="currentTime">0:00</span>
-                        <span id="duration">0:00</span>
-                    </div>
-                </div>
-                <div class="volume-container">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                    </svg>
-                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70">
-                </div>
-                <div class="visualizer" id="visualizer">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-                <audio id="audioPlayer" preload="metadata"></audio>
             </div>
         </div>
     </section>
