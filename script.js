@@ -40,19 +40,19 @@ buyButtons.forEach(button => {
             </div>
         `;
         
-        modal.style.display = 'block';
+        modal.classList.remove('hidden');
     });
 });
 
 // Close modal
 closeBtn.onclick = function() {
-    modal.style.display = 'none';
+    modal.classList.add('hidden');
 };
 
 // Close modal when clicking outside
 window.onclick = function(event) {
     if (event.target == modal) {
-        modal.style.display = 'none';
+        modal.classList.add('hidden');
     }
 };
 
@@ -118,7 +118,7 @@ purchaseForm.addEventListener('submit', async function(e) {
             alert(`Спасибо за заявку на курс "${data.course}"!\n\nМы свяжемся с вами по email ${data.email} в ближайшее время.`);
             
             // Close modal and reset form
-            modal.style.display = 'none';
+            modal.classList.add('hidden');
             purchaseForm.reset();
         } else {
             throw new Error('Ошибка отправки');

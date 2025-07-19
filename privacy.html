@@ -4,131 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Политика конфиденциальности - Этическое Айкидо</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="apple-touch-icon" sizes="192x192" href="favicon-192x192.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dist/output.css">
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        .legal-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 80px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-        
-        .legal-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .legal-title {
-            font-family: 'Russo One', sans-serif;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .legal-date {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 1rem;
-        }
-        
-        .legal-content h2 {
-            color: var(--secondary-color);
-            margin: 30px 0 15px 0;
-            font-size: 1.5rem;
-        }
-        
-        .legal-content p, .legal-content li {
-            line-height: 1.8;
-            margin-bottom: 15px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .legal-content ul {
-            padding-left: 30px;
-            margin-bottom: 20px;
-        }
-        
-        .back-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .back-button:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-    </style>
 </head>
-<body>
-    <div class="lightning-bg"></div>
+<body class="font-montserrat bg-dark-bg text-white overflow-x-hidden">
+    <div class="lightning-bg fixed top-0 left-0 w-full h-full pointer-events-none -z-10 animate-lightning"></div>
     
-    <div class="container">
-        <a href="index.html" class="back-button">← Вернуться на главную</a>
+    <div class="container max-w-4xl mx-auto px-5">
+        <a href="index.html" class="inline-block px-8 py-3 bg-primary text-white no-underline rounded-full mb-8 mt-8 transition-all duration-300 hover:bg-secondary hover:-translate-y-0.5">← Вернуться на главную</a>
         
-        <div class="legal-container">
-            <div class="legal-header">
-                <h1 class="legal-title">Политика конфиденциальности</h1>
-                <p class="legal-date">Дата обновления: 19 июля 2025</p>
+        <div class="max-w-4xl mx-auto py-20 px-5 bg-white/5 backdrop-blur-md rounded-3xl mt-12 mb-12">
+            <div class="text-center mb-12">
+                <h1 class="font-russo text-5xl text-primary mb-5">Политика конфиденциальности</h1>
+                <p class="text-white/60 text-base">Дата обновления: 19 июля 2024</p>
             </div>
             
-            <div class="legal-content">
-                <h2>1. Общие положения</h2>
-                <p>Настоящая политика конфиденциальности (далее — Политика) действует в отношении всей информации, которую сайт "Этическое Айкидо" может получить о пользователе во время использования сайта.</p>
+            <div class="prose prose-invert max-w-none">
+                <h2 class="text-secondary mt-8 mb-4 text-2xl">1. Общие положения</h2>
+                <p class="leading-relaxed mb-4 text-white/90">Настоящая политика конфиденциальности (далее — Политика) действует в отношении всей информации, которую сайт "Этическое Айкидо" может получить о пользователе во время использования сайта.</p>
                 
-                <h2>2. Сбор информации</h2>
-                <p>Мы собираем следующую информацию:</p>
-                <ul>
-                    <li>Имя пользователя</li>
-                    <li>Адрес электронной почты</li>
-                    <li>Информация о выбранном курсе</li>
+                <h2 class="text-secondary mt-8 mb-4 text-2xl">2. Сбор информации</h2>
+                <p class="leading-relaxed mb-4 text-white/90">Мы собираем следующую информацию:</p>
+                <ul class="pl-8 mb-5 space-y-2">
+                    <li class="text-white/90">Имя пользователя</li>
+                    <li class="text-white/90">Адрес электронной почты</li>
+                    <li class="text-white/90">Информация о выбранном курсе</li>
                 </ul>
                 
-                <h2>3. Использование информации</h2>
-                <p>Собранная информация используется для:</p>
-                <ul>
-                    <li>Связи с пользователем по вопросам оказания услуг</li>
-                    <li>Отправки информации о курсах и специальных предложениях</li>
-                    <li>Улучшения качества обслуживания</li>
-                    <li>Проведения статистических исследований</li>
+                <h2 class="text-secondary mt-8 mb-4 text-2xl">3. Использование информации</h2>
+                <p class="leading-relaxed mb-4 text-white/90">Собранная информация используется для:</p>
+                <ul class="pl-8 mb-5 space-y-2">
+                    <li class="text-white/90">Связи с пользователем по вопросам оказания услуг</li>
+                    <li class="text-white/90">Отправки информации о курсах и специальных предложениях</li>
+                    <li class="text-white/90">Улучшения качества обслуживания</li>
+                    <li class="text-white/90">Проведения статистических исследований</li>
                 </ul>
                 
-                <h2>4. Защита данных</h2>
-                <p>Мы принимаем необходимые организационные и технические меры для защиты персональной информации от неправомерного или случайного доступа, уничтожения, изменения, блокирования, копирования, распространения.</p>
+                <h2 class="text-secondary mt-8 mb-4 text-2xl">4. Защита данных</h2>
+                <p class="leading-relaxed mb-4 text-white/90">Мы принимаем необходимые организационные и технические меры для защиты персональной информации от неправомерного или случайного доступа, уничтожения, изменения, блокирования, копирования, распространения.</p>
                 
-                <h2>5. Передача данных третьим лицам</h2>
-                <p>Мы не передаем персональные данные третьим лицам без согласия пользователя, за исключением случаев, предусмотренных законодательством РФ.</p>
+                <h2 class="text-secondary mt-8 mb-4 text-2xl">5. Передача данных третьим лицам</h2>
+                <p class="leading-relaxed mb-4 text-white/90">Мы не передаем персональные данные третьим лицам без согласия пользователя, за исключением случаев, предусмотренных законодательством РФ.</p>
                 
-                <h2>6. Использование файлов cookie</h2>
-                <p>Сайт может использовать файлы cookie для улучшения пользовательского опыта. Пользователь может отключить использование cookie в настройках браузера.</p>
+                <h2 class="text-secondary mt-8 mb-4 text-2xl">6. Использование файлов cookie</h2>
+                <p class="leading-relaxed mb-4 text-white/90">Сайт может использовать файлы cookie для улучшения пользовательского опыта. Пользователь может отключить использование cookie в настройках браузера.</p>
                 
-                <h2>7. Права пользователей</h2>
-                <p>Пользователи имеют право:</p>
-                <ul>
-                    <li>Получать информацию о своих персональных данных</li>
-                    <li>Требовать уточнения или удаления своих данных</li>
-                    <li>Отозвать согласие на обработку персональных данных</li>
+                <h2 class="text-secondary mt-8 mb-4 text-2xl">7. Права пользователей</h2>
+                <p class="leading-relaxed mb-4 text-white/90">Пользователи имеют право:</p>
+                <ul class="pl-8 mb-5 space-y-2">
+                    <li class="text-white/90">Получать информацию о своих персональных данных</li>
+                    <li class="text-white/90">Требовать уточнения или удаления своих данных</li>
+                    <li class="text-white/90">Отозвать согласие на обработку персональных данных</li>
                 </ul>
                 
-                <h2>8. Изменения в политике</h2>
-                <p>Мы оставляем за собой право вносить изменения в настоящую Политику. Новая редакция Политики вступает в силу с момента ее размещения на сайте.</p>
+                <h2 class="text-secondary mt-8 mb-4 text-2xl">8. Изменения в политике</h2>
+                <p class="leading-relaxed mb-4 text-white/90">Мы оставляем за собой право вносить изменения в настоящую Политику. Новая редакция Политики вступает в силу с момента ее размещения на сайте.</p>
                 
-                <h2>9. Контакты</h2>
-                <p>По всем вопросам, связанным с политикой конфиденциальности, вы можете связаться с нами через форму обратной связи на сайте.</p>
+                <h2 class="text-secondary mt-8 mb-4 text-2xl">9. Контакты</h2>
+                <p class="leading-relaxed mb-4 text-white/90">По всем вопросам, связанным с политикой конфиденциальности, вы можете связаться с нами через форму обратной связи на сайте.</p>
             </div>
         </div>
     </div>

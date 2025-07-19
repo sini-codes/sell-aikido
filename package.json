@@ -1,0 +1,27 @@
+{
+  "name": "sell-aikido",
+  "version": "1.0.0",
+  "description": "Лендинг для продажи курсов по этическому айкидо.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sini-codes/sell-aikido.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sini-codes/sell-aikido/issues"
+  },
+  "homepage": "https://github.com/sini-codes/sell-aikido#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
+  }
+}
