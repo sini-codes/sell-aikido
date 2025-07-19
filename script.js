@@ -126,17 +126,7 @@ const tracks = [
     {
         name: "Bolero",
         artist: "Maurice Ravel",
-        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"
-    },
-    {
-        name: "Ride of the Valkyries",
-        artist: "Richard Wagner",
-        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
-    },
-    {
-        name: "Symphony No. 5",
-        artist: "Ludwig van Beethoven",
-        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"
+        url: "https://ia800605.us.archive.org/8/items/BoleroMauriceRavel/Bolero%20%28Maurice%20Ravel%29.mp3"
     }
 ];
 
