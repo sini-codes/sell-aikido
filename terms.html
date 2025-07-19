@@ -4,99 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Договор оферты - Этическое Айкидо</title>
-    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-</head>
-<body class="font-montserrat bg-dark-bg text-white overflow-x-hidden">
-    <div class="lightning-bg fixed top-0 left-0 w-full h-full pointer-events-none -z-10 animate-lightning"></div>
-    
-    <div class="container max-w-4xl mx-auto px-5">
-        <a href="index.html" class="inline-block px-8 py-3 bg-primary text-white no-underline rounded-full mb-8 mt-8 transition-all duration-300 hover:bg-secondary hover:-translate-y-0.5">← Вернуться на главную</a>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <style>
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
         
-        <div class="max-w-4xl mx-auto py-20 px-5 bg-white/5 backdrop-blur-md rounded-3xl mt-12 mb-12">
-            <div class="text-center mb-12">
-                <h1 class="font-russo text-5xl text-primary mb-5">Публичная оферта</h1>
-                <p class="text-white/60 text-base">Дата публикации: 19 июля 2024</p>
+        .legal-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .legal-title {
+            font-family: 'Russo One', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .legal-date {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+        }
+        
+        .legal-content h2 {
+            color: var(--secondary-color);
+            margin: 30px 0 15px 0;
+            font-size: 1.5rem;
+        }
+        
+        .legal-content h3 {
+            color: var(--accent-color);
+            margin: 20px 0 10px 0;
+            font-size: 1.2rem;
+        }
+        
+        .legal-content p, .legal-content li {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .legal-content ul {
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .important-text {
+            background: rgba(255, 107, 107, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="lightning-bg"></div>
+    
+    <div class="container">
+        <a href="index.html" class="back-button">← Вернуться на главную</a>
+        
+        <div class="legal-container">
+            <div class="legal-header">
+                <h1 class="legal-title">Публичная оферта</h1>
+                <p class="legal-date">Дата публикации: 19 июля 2024</p>
             </div>
             
-            <div class="prose prose-invert max-w-none">
-                <div class="bg-secondary/10 p-5 rounded-xl border-l-4 border-secondary my-5">
-                    <p class="text-white/90"><strong>Внимание!</strong> Перед оформлением заявки внимательно ознакомьтесь с условиями настоящего Договора. Оформление заявки на сайте означает полное и безоговорочное принятие условий данного Договора.</p>
+            <div class="legal-content">
+                <div class="important-text">
+                    <p><strong>Внимание!</strong> Перед оформлением заявки внимательно ознакомьтесь с условиями настоящего Договора. Оформление заявки на сайте означает полное и безоговорочное принятие условий данного Договора.</p>
                 </div>
                 
-                <h2 class="text-secondary mt-8 mb-4 text-2xl">1. Термины и определения</h2>
-                <p class="leading-relaxed mb-4 text-white/90"><strong>Исполнитель</strong> — организация "Этическое Айкидо", предоставляющая образовательные услуги.</p>
-                <p class="leading-relaxed mb-4 text-white/90"><strong>Заказчик</strong> — физическое лицо, оформившее заявку на обучение.</p>
-                <p class="leading-relaxed mb-4 text-white/90"><strong>Курс</strong> — образовательная программа по этическому айкидо.</p>
-                <p class="leading-relaxed mb-4 text-white/90"><strong>Сайт</strong> — интернет-ресурс, расположенный по адресу sini-codes.github.io/sell-aikido/</p>
+                <h2>1. Термины и определения</h2>
+                <p><strong>Исполнитель</strong> — организация "Этическое Айкидо", предоставляющая образовательные услуги.</p>
+                <p><strong>Заказчик</strong> — физическое лицо, оформившее заявку на обучение.</p>
+                <p><strong>Курс</strong> — образовательная программа по этическому айкидо.</p>
+                <p><strong>Сайт</strong> — интернет-ресурс, расположенный по адресу sini-codes.github.io/sell-aikido/</p>
                 
-                <h2 class="text-secondary mt-8 mb-4 text-2xl">2. Предмет договора</h2>
-                <h3 class="text-accent mt-5 mb-2 text-xl">2.1. Общие положения</h3>
-                <p class="leading-relaxed mb-4 text-white/90">Исполнитель обязуется предоставить Заказчику образовательные услуги по выбранному курсу, а Заказчик обязуется оплатить эти услуги.</p>
+                <h2>2. Предмет договора</h2>
+                <h3>2.1. Общие положения</h3>
+                <p>Исполнитель обязуется предоставить Заказчику образовательные услуги по выбранному курсу, а Заказчик обязуется оплатить эти услуги.</p>
                 
-                <h3 class="text-accent mt-5 mb-2 text-xl">2.2. Перечень курсов</h3>
-                <ul class="pl-8 mb-5 space-y-2">
-                    <li class="text-white/90">Этическое Айкидо: Основы (Уровень 1)</li>
-                    <li class="text-white/90">Квантовое Айкидо: Мастер (Уровень 2)</li>
-                    <li class="text-white/90">Космическое Айкидо: Гранд-Мастер (Уровень 3)</li>
+                <h3>2.2. Перечень курсов</h3>
+                <ul>
+                    <li>Этическое Айкидо: Основы (Уровень 1)</li>
+                    <li>Квантовое Айкидо: Мастер (Уровень 2)</li>
+                    <li>Космическое Айкидо: Гранд-Мастер (Уровень 3)</li>
                 </ul>
                 
-                <h2 class="text-secondary mt-8 mb-4 text-2xl">3. Порядок оформления</h2>
-                <h3 class="text-accent mt-5 mb-2 text-xl">3.1. Оформление заявки</h3>
-                <p class="leading-relaxed mb-4 text-white/90">Для участия в курсе Заказчик оформляет заявку на сайте, указывая:</p>
-                <ul class="pl-8 mb-5 space-y-2">
-                    <li class="text-white/90">Имя</li>
-                    <li class="text-white/90">Адрес электронной почты</li>
-                    <li class="text-white/90">Выбранный курс</li>
+                <h2>3. Порядок оформления</h2>
+                <h3>3.1. Оформление заявки</h3>
+                <p>Для участия в курсе Заказчик оформляет заявку на сайте, указывая:</p>
+                <ul>
+                    <li>Имя</li>
+                    <li>Адрес электронной почты</li>
+                    <li>Выбранный курс</li>
                 </ul>
                 
-                <h3 class="text-accent mt-5 mb-2 text-xl">3.2. Подтверждение</h3>
-                <p class="leading-relaxed mb-4 text-white/90">После оформления заявки Заказчик получает подтверждение на указанный email с деталями оплаты и доступа к курсу.</p>
+                <h3>3.2. Подтверждение</h3>
+                <p>После оформления заявки Заказчик получает подтверждение на указанный email с деталями оплаты и доступа к курсу.</p>
                 
-                <h2 class="text-secondary mt-8 mb-4 text-2xl">4. Стоимость и оплата</h2>
-                <h3 class="text-accent mt-5 mb-2 text-xl">4.1. Стоимость курсов</h3>
-                <ul class="pl-8 mb-5 space-y-2">
-                    <li class="text-white/90">Уровень 1: 14 950 рублей</li>
-                    <li class="text-white/90">Уровень 2: 24 950 рублей</li>
-                    <li class="text-white/90">Уровень 3: 49 950 рублей</li>
+                <h2>4. Стоимость и оплата</h2>
+                <h3>4.1. Стоимость курсов</h3>
+                <ul>
+                    <li>Уровень 1: 14 950 рублей</li>
+                    <li>Уровень 2: 24 950 рублей</li>
+                    <li>Уровень 3: 49 950 рублей</li>
                 </ul>
                 
-                <h3 class="text-accent mt-5 mb-2 text-xl">4.2. Порядок оплаты</h3>
-                <p class="leading-relaxed mb-4 text-white/90">Оплата производится в течение 3 (трех) дней с момента получения реквизитов. Доступ к курсу предоставляется после поступления оплаты.</p>
+                <h3>4.2. Порядок оплаты</h3>
+                <p>Оплата производится в течение 3 (трех) дней с момента получения реквизитов. Доступ к курсу предоставляется после поступления оплаты.</p>
                 
-                <h2 class="text-secondary mt-8 mb-4 text-2xl">5. Права и обязанности сторон</h2>
-                <h3 class="text-accent mt-5 mb-2 text-xl">5.1. Исполнитель обязуется:</h3>
-                <ul class="pl-8 mb-5 space-y-2">
-                    <li class="text-white/90">Предоставить доступ к материалам курса</li>
-                    <li class="text-white/90">Обеспечить качественное проведение занятий</li>
-                    <li class="text-white/90">Выдать сертификат по окончании курса</li>
+                <h2>5. Права и обязанности сторон</h2>
+                <h3>5.1. Исполнитель обязуется:</h3>
+                <ul>
+                    <li>Предоставить доступ к материалам курса</li>
+                    <li>Обеспечить качественное проведение занятий</li>
+                    <li>Выдать сертификат по окончании курса</li>
                 </ul>
                 
-                <h3 class="text-accent mt-5 mb-2 text-xl">5.2. Заказчик обязуется:</h3>
-                <ul class="pl-8 mb-5 space-y-2">
-                    <li class="text-white/90">Своевременно оплатить выбранный курс</li>
-                    <li class="text-white/90">Соблюдать правила обучения</li>
-                    <li class="text-white/90">Не распространять материалы курса третьим лицам</li>
+                <h3>5.2. Заказчик обязуется:</h3>
+                <ul>
+                    <li>Своевременно оплатить выбранный курс</li>
+                    <li>Соблюдать правила обучения</li>
+                    <li>Не распространять материалы курса третьим лицам</li>
                 </ul>
                 
-                <h2 class="text-secondary mt-8 mb-4 text-2xl">6. Возврат средств</h2>
-                <p class="leading-relaxed mb-4 text-white/90">Возврат средств возможен в течение 14 дней с момента оплаты при условии, что Заказчик не приступил к обучению. После начала обучения возврат средств не производится.</p>
+                <h2>6. Возврат средств</h2>
+                <p>Возврат средств возможен в течение 14 дней с момента оплаты при условии, что Заказчик не приступил к обучению. После начала обучения возврат средств не производится.</p>
                 
-                <h2 class="text-secondary mt-8 mb-4 text-2xl">7. Ответственность сторон</h2>
-                <p class="leading-relaxed mb-4 text-white/90">Стороны несут ответственность за неисполнение или ненадлежащее исполнение обязательств в соответствии с законодательством РФ.</p>
+                <h2>7. Ответственность сторон</h2>
+                <p>Стороны несут ответственность за неисполнение или ненадлежащее исполнение обязательств в соответствии с законодательством РФ.</p>
                 
-                <h2 class="text-secondary mt-8 mb-4 text-2xl">8. Конфиденциальность</h2>
-                <p class="leading-relaxed mb-4 text-white/90">Исполнитель обязуется соблюдать конфиденциальность персональных данных Заказчика в соответствии с Политикой конфиденциальности.</p>
+                <h2>8. Конфиденциальность</h2>
+                <p>Исполнитель обязуется соблюдать конфиденциальность персональных данных Заказчика в соответствии с Политикой конфиденциальности.</p>
                 
-                <h2 class="text-secondary mt-8 mb-4 text-2xl">9. Разрешение споров</h2>
-                <p class="leading-relaxed mb-4 text-white/90">Все споры решаются путем переговоров. При невозможности достижения соглашения споры передаются на рассмотрение в суд по месту нахождения Исполнителя.</p>
+                <h2>9. Разрешение споров</h2>
+                <p>Все споры решаются путем переговоров. При невозможности достижения соглашения споры передаются на рассмотрение в суд по месту нахождения Исполнителя.</p>
                 
-                <h2 class="text-secondary mt-8 mb-4 text-2xl">10. Заключительные положения</h2>
-                <p class="leading-relaxed mb-4 text-white/90">Договор вступает в силу с момента оформления заявки и действует до полного исполнения обязательств сторонами.</p>
-                <p class="leading-relaxed mb-4 text-white/90">Исполнитель вправе вносить изменения в условия Договора, публикуя новую версию на сайте.</p>
+                <h2>10. Заключительные положения</h2>
+                <p>Договор вступает в силу с момента оформления заявки и действует до полного исполнения обязательств сторонами.</p>
+                <p>Исполнитель вправе вносить изменения в условия Договора, публикуя новую версию на сайте.</p>
                 
-                <div class="bg-secondary/10 p-5 rounded-xl border-l-4 border-secondary my-5">
-                    <p class="text-white/90"><strong>Реквизиты Исполнителя:</strong><br>
+                <div class="important-text">
+                    <p><strong>Реквизиты Исполнителя:</strong><br>
                     Образовательный центр "Этическое Айкидо"<br>
                     Email для связи указывается при оформлении заявки</p>
                 </div>
