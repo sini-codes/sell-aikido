@@ -56,31 +56,81 @@ window.onclick = function(event) {
     }
 };
 
+// Discord webhook URL
+const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1396172141585498122/Njovap_ShNvGI8kRqHc-8gEuL3TU-5BZy2e9Fm_kLi2fyvHQ5YKraVLoNDVILXGvFBM2';
+
 // Handle form submission
-purchaseForm.addEventListener('submit', function(e) {
+purchaseForm.addEventListener('submit', async function(e) {
     e.preventDefault();
     
     const formData = new FormData(purchaseForm);
     const data = {
         course: courses[selectedCourse].name,
         name: formData.get('name'),
-        email: formData.get('email'),
-        phone: formData.get('phone')
+        email: formData.get('email')
     };
     
-    // Here you would normally send the data to your server
-    console.log('Purchase data:', data);
+    // Disable submit button
+    const submitBtn = purchaseForm.querySelector('.submit-button');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Отправка...';
     
-    // Show success message
-    alert(`Спасибо за заказ курса "${data.course}"! 
-    
-Мы свяжемся с вами по телефону ${data.phone} в течение 15 минут для подтверждения заказа.
-    
-На email ${data.email} отправлены детали оплаты.`);
-    
-    // Close modal and reset form
-    modal.style.display = 'none';
-    purchaseForm.reset();
+    try {
+        // Send to Discord webhook
+        const webhookData = {
+            embeds: [{
+                title: '🎯 Новая заявка на курс!',
+                color: 0x4ecdc4,
+                fields: [
+                    {
+                        name: '📚 Курс',
+                        value: data.course,
+                        inline: true
+                    },
+                    {
+                        name: '👤 Имя',
+                        value: data.name,
+                        inline: true
+                    },
+                    {
+                        name: '📧 Email',
+                        value: data.email,
+                        inline: true
+                    }
+                ],
+                timestamp: new Date().toISOString(),
+                footer: {
+                    text: 'Этическое Айкидо'
+                }
+            }]
+        };
+        
+        const response = await fetch(DISCORD_WEBHOOK_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(webhookData)
+        });
+        
+        if (response.ok) {
+            // Show success message
+            alert(`Спасибо за заявку на курс "${data.course}"!\n\nМы свяжемся с вами по email ${data.email} в ближайшее время.`);
+            
+            // Close modal and reset form
+            modal.style.display = 'none';
+            purchaseForm.reset();
+        } else {
+            throw new Error('Ошибка отправки');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже или свяжитесь с нами напрямую.');
+    } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Отправить заявку';
+    }
 });
 
 // Smooth scrolling for navigation links
