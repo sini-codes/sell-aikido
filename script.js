@@ -19,12 +19,16 @@ const courses = {
 
 // Modal functionality
 const modal = document.getElementById('purchase-modal');
-const buyButtons = document.querySelectorAll('.buy-button');
-const closeBtn = document.querySelector('.close');
+const buyButtons = document.querySelectorAll('[data-course]');
 const selectedCourseDiv = document.getElementById('selected-course');
 const purchaseForm = document.getElementById('purchase-form');
 
 let selectedCourse = '';
+
+// Close modal function
+function closeModal() {
+    modal.classList.add('hidden');
+}
 
 // Open modal when buy button is clicked
 buyButtons.forEach(button => {
@@ -44,17 +48,6 @@ buyButtons.forEach(button => {
     });
 });
 
-// Close modal
-closeBtn.onclick = function() {
-    modal.classList.add('hidden');
-};
-
-// Close modal when clicking outside
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.classList.add('hidden');
-    }
-};
 
 // Discord webhook URL
 const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1396172141585498122/Njovap_ShNvGI8kRqHc-8gEuL3TU-5BZy2e9Fm_kLi2fyvHQ5YKraVLoNDVILXGvFBM2';
@@ -71,7 +64,7 @@ purchaseForm.addEventListener('submit', async function(e) {
     };
     
     // Disable submit button
-    const submitBtn = purchaseForm.querySelector('.submit-button');
+    const submitBtn = purchaseForm.querySelector('button[type="submit"]');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Отправка...';
     
@@ -147,109 +140,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add animation on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
 
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
 
-// Observe all course cards and benefit cards
-document.querySelectorAll('.course-card, .benefit-card, .comic-panel').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-});
 
-// Add hover effect to power bars
-document.querySelectorAll('.course-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        const powerBar = this.querySelector('.power-bar');
-        powerBar.style.transform = 'scaleX(1.1)';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        const powerBar = this.querySelector('.power-bar');
-        powerBar.style.transform = 'scaleX(1)';
-    });
-});
 
-// Add particles effect
-function createParticle() {
-    const particle = document.createElement('div');
-    particle.style.position = 'fixed';
-    particle.style.width = '4px';
-    particle.style.height = '4px';
-    particle.style.background = '#ffd93d';
-    particle.style.borderRadius = '50%';
-    particle.style.pointerEvents = 'none';
-    particle.style.opacity = Math.random();
-    particle.style.left = Math.random() * window.innerWidth + 'px';
-    particle.style.top = '-10px';
-    particle.style.zIndex = '-1';
-    
-    document.body.appendChild(particle);
-    
-    const duration = Math.random() * 3000 + 2000;
-    const horizontalMovement = (Math.random() - 0.5) * 100;
-    
-    particle.animate([
-        { transform: 'translate(0, 0)' },
-        { transform: `translate(${horizontalMovement}px, ${window.innerHeight + 10}px)` }
-    ], {
-        duration: duration,
-        easing: 'linear'
-    }).onfinish = () => particle.remove();
-}
-
-// Create particles periodically
-setInterval(createParticle, 300);
-
-// Add countdown timer for special offer
-function updateCountdown() {
-    const now = new Date();
-    const midnight = new Date();
-    midnight.setHours(24, 0, 0, 0);
-    
-    const diff = midnight - now;
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    
-    const countdownElements = document.querySelectorAll('.bonus-badge');
-    countdownElements.forEach(el => {
-        if (el.textContent === 'ХИТЫ' || el.textContent === 'ЛЕГЕНДА') {
-            // You could add a countdown here if needed
-        }
-    });
-}
-
-// Update countdown every second
-setInterval(updateCountdown, 1000);
-
-// Add typing effect to hero title
-const heroTitle = document.querySelector('.hero-title');
-if (heroTitle) {
-    const text = heroTitle.textContent;
-    heroTitle.textContent = '';
-    let i = 0;
-    
-    function typeWriter() {
-        if (i < text.length) {
-            heroTitle.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-        }
-    }
-    
-    setTimeout(typeWriter, 500);
-}
